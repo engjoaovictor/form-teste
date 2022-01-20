@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <fieldset>
+        <legend><h1>RELATÓRIO DE INSPEÇÃO</h1></legend>       
+            <p>Preencha os campos a seguir:</p>
+<!-- Usuário irá inserir as informações sobre a equipe presente na inspeção-->    
+        <div class="campo-equipe">
+            <table>
+                <tr>
+                    <th>EQUIPAMENTO</th>
+                    <th>TÉCNICO</th>
+                    <th>OPERADOR</th>
+                    <th>ACOMPANHANTE(S)</th>
+                </tr>
+                <tr>
+                    <th> <select name="equipamento" id="equipamento">
+                        <option value="gius1"> GIUS001 </option>
+                        <option value="gius2"> GIUS002 </option>
+                        <option value="rti"> RTI </option>
+                        <option value="autossom"> AUTOSSOM </option>
+                    </select></th>
+                    <th><input type="text" id="tecnico" name="tecnico" placeholder="nome do técnico"></th>
+                    <th><input type="text" id="operador" name="operador" placeholder="nome do operador"></th>
+                    <th><input type="text" name="acompanhantes" id="acompanhantes" placeholder="nome do(s) acompanhante(s)"></th>
+                </tr>
+            </table>
+        </div> <br>
+<!-- Usuário irá inserir as informações sobre o local inspecionado-->
+        <div class="campo-local">
+            <table>
+               <tr> 
+                    <th>CORREDOR</th>
+                    <th>SUPERVISÃO</th>
+                    <th>TRECHOS INSPECIONADOS</th>
+                </tr>
+                <tr>
+                    <th><input type="text" id="corredor" name="corredor" placeholder="ex: Paulista"></th>
+                    <th><input type="text" id="supervisao" name="supervisao" placeholder="ex: Ribeirão Preto"></th>
+                    <th><input type="text" name="trechos" id="trechos" placeholder="ex: ZHB até ZRP"></th>
+                </tr>
+            </table>
+        </div> <br>
+<!-- Usuário irá inserir as distancias (km inicial, km final, total)-->
+        <div class="campo-km">
+            <table>
+                <tr> 
+                    <th>KM INICIAL</th>
+                    <th>KM FINAL</th>
+                    <th>TOTAL INSPECIONADO</th>
+                 </tr>
+                 <tr>
+                    <th><input type="text" id="kminicial" name="kminicial" placeholder="ex: 183,600"></th>
+                    <th><input type="text" id="kmfinal" name="kmfinal" placeholder="ex: 217,620"></th>
+                    <th><input type="text" name="total" id="total" placeholder="ex: 34.020"></th>
+                 </tr>
+             </table> <br>
+        </div> <hr>
+<!-- Usuário irá inserir os defeitos encontrados-->   
+        <div class="defeitos">
+            <h2 class="subtitulo"> &#x1F6AB; DEFEITOS </h2>
+                <P>Informe a quantidade de defeitos, restrições e interdições:</P>
+                <table class="tabela-defeitos"> 
+                    <tr>
+                        <th>INTERDIÇÕES</th>
+                        <th>RESTRIÇÕES</th>
+                        <th>ZONA QUENTE</th>
+                    </tr>
+                    <tr>
+                        <th><input type="number" name="num-interdicoes" id="num-interdicoes" placeholder="qntd. de interdições"></th>
+                        <th><input type="number" name="num-restricoes" id="num-restricoes" placeholder="qntd. de restricoes"></th>
+                        <th><input type="number" name="num-zonaquente" id="num-zonaquente" placeholder="qntd. em Z.Q"></th>
+                    </tr>
+                    <tr>
+                        <th>P0</th>
+                        <th>P1</th>
+                        <th>P2</th>
+                    </tr>
+                    <tr>
+                        <th><input type="number" name="num-p0" id="num-p0" placeholder="qntd. de P0"></th>
+                        <th><input type="number" name="num-p1" id="num-p1" placeholder="qntd. de P1"></th>
+                        <th><input type="number" name="num-p2" id="num-p2" placeholder="qntd. de P2"></th>
+                    </tr>
+                </table>          
+        </div> <br> <hr>
+<!-- Usuário irá inserir imagens da inspeção-->
+    <h2 class="subtitulo">EVIDÊNCIAS</h2>
+        <P>Anexe evidências da inspeção:</P> <br>
+                
+        <div class="evidencias">
+             <table>
+                <tr>
+                    <th> <img src="" alt="" id="preview-image" class="preview" > </th>
+                    <th> <img src="" alt="" id="preview-image2" class="preview" > </th>
+                    <th> <img src="" alt="" id="preview-image3" class="preview" > </th>
+                </tr>
+                <tr>
+                    <th> <input type="file" accept="image/*" value="Anexar Imagens" id="foto1" name="foto1" class="botao"> </th>
+                    <th> <input type="file" accept="image/*" value="Anexar Imagens" id="foto2" name="foto2" class="botao"> </th>
+                    <th> <input type="file" accept="image/*" value="Anexar Imagens" id="foto3" name="foto3" class="botao"> </th>
+                </tr>
+                <tr>
+                    <th> <label for="foto1" class="enviar">Enviar Imagem</label> </th>
+                    <th> <label for="foto2" class="enviar">Enviar Imagem</label> </th>
+                    <th> <label for="foto3" class="enviar">Enviar Imagem</label> </th>
+                </tr>
+                <tr class="resposta">
+                    <th> <textarea name="obs-foto1" id="obs-foto1" cols="30" rows="5" placeholder="Comentário:"></textarea> </th>
+                    <th> <textarea name="obs-foto2" id="obs-foto2" cols="30" rows="5" placeholder="Comentário:"></textarea> </th>
+                    <th> <textarea name="obs-foto3" id="obs-foto3" cols="30" rows="5" placeholder="Comentário:"></textarea> </th>
+                </tr>
+                <tr>
+                    <th> <img src="" alt="" id="preview-image4" class="preview" > </th>
+                    <th> <img src="" alt="" id="preview-image5" class="preview" > </th>
+                    <th> <img src="" alt="" id="preview-image6" class="preview" > </th>
+                </tr>
+                <tr>
+                    <th> <input type="file" accept="image/*" value="Anexar Imagens" id="foto4" name="foto4" class="botao"> </th>
+                    <th> <input type="file" accept="image/*" value="Anexar Imagens" id="foto5" name="foto5" class="botao"> </th>
+                    <th> <input type="file" accept="image/*" value="Anexar Imagens" id="foto6" name="foto6" class="botao"> </th>
+                </tr>
+                <tr>
+                    <th> <label for="foto4" class="enviar">Enviar Imagem</label> </th>
+                    <th> <label for="foto5" class="enviar">Enviar Imagem</label> </th>
+                    <th> <label for="foto6" class="enviar">Enviar Imagem</label> </th>
+                </tr>
+                <tr class="resposta">
+                    <th> <textarea name="obs-foto4" id="obs-foto4" cols="30" rows="5" placeholder="Comentário:"></textarea> </th>
+                    <th> <textarea name="obs-foto5" id="obs-foto5" cols="30" rows="5" placeholder="Comentário:"></textarea> </th>
+                    <th> <textarea name="obs-foto6" id="obs-foto6" cols="30" rows="5" placeholder="Comentário:"></textarea> </th>
+                </tr>
+                <tr>
+                    <th> <img src="" alt="" id="preview-image7" class="preview" > </th>
+                    <th> <img src="" alt="" id="preview-image8" class="preview" > </th>
+                    <th> <img src="" alt="" id="preview-image9" class="preview" > </th>
+                </tr>
+                <tr>
+                    <th> <input type="file" accept="image/*" value="Anexar Imagens" id="foto7" name="foto7" class="botao"> </th>
+                    <th> <input type="file" accept="image/*" value="Anexar Imagens" id="foto8" name="foto8" class="botao"> </th>
+                    <th> <input type="file" accept="image/*" value="Anexar Imagens" id="foto9" name="foto9" class="botao"> </th>
+                </tr>
+                <tr>
+                    <th> <label for="foto7" class="enviar">Enviar Imagem</label> </th>
+                    <th> <label for="foto8" class="enviar">Enviar Imagem</label> </th>
+                    <th> <label for="foto9" class="enviar">Enviar Imagem</label> </th>
+                </tr>
+                <tr class="resposta">
+                    <th> <textarea name="obs-foto7" id="obs-foto7" cols="30" rows="5" placeholder="Comentário:"></textarea> </th>
+                    <th> <textarea name="obs-foto8" id="obs-foto8" cols="30" rows="5" placeholder="Comentário:"></textarea> </th>
+                    <th> <textarea name="obs-foto9" id="obs-foto9" cols="30" rows="5" placeholder="Comentário:"></textarea> </th>
+                </tr>
+                <tr>
+                    <th> <img src="" alt="" id="preview-image10" class="preview" > </th>
+                    <th> <img src="" alt="" id="preview-image11" class="preview" > </th>
+                    <th> <img src="" alt="" id="preview-image12" class="preview" > </th>
+                </tr>
+                <tr>
+                    <th> <input type="file" accept="image/*" value="Anexar Imagens" id="foto10" name="foto10" class="botao"> </th>
+                    <th> <input type="file" accept="image/*" value="Anexar Imagens" id="foto11" name="foto11" class="botao"> </th>
+                    <th> <input type="file" accept="image/*" value="Anexar Imagens" id="foto12" name="foto12" class="botao"> </th>
+                </tr>
+                <tr>
+                    <th> <label for="foto10" class="enviar">Enviar Imagem</label> </th>
+                    <th> <label for="foto11" class="enviar">Enviar Imagem</label> </th>
+                    <th> <label for="foto12" class="enviar">Enviar Imagem</label> </th>
+                </tr>
+                <tr class="resposta">
+                    <th> <textarea name="obs-foto10" id="obs-foto10" cols="30" rows="5" placeholder="Comentário:"></textarea> </th>
+                    <th> <textarea name="obs-foto11" id="obs-foto11" cols="30" rows="5" placeholder="Comentário:"></textarea> </th>
+                    <th> <textarea name="obs-foto12" id="obs-foto12" cols="30" rows="5" placeholder="Comentário:"></textarea> </th>
+                </tr>
+            </table>
+        </div> <br> <hr>
+<!-- Aqui será inserido informações da macro 20 (tempos)-->
+        <div>
+            <h2>MACRO 20</h2>
+            <table>
+                <tr>
+                    <th>HI</th>
+                    <th>HT</th>
+                    <th>HP</th>
+                    <th>HD</th>
+                </tr>
+                <tr>
+                    <th><input type="time" name="tempo-hi" id="tempo-hi"></th>
+                    <th><input type="time" name="tempo-ht" id="tempo-ht"></th>
+                    <th><input type="time" name="tempo-hp" id="tempo-hp"></th>
+                    <th><input type="time" name="tempo-hd" id="tempo-hd"></th>
+                </tr>
+
+                <datalist id="tempo-tsts">
+                    <option value="10">
+                    <option value="20">
+                    <option value="30">
+                    <option value="40">
+                    <option value="50">
+                </datalist>
+
+                <tr>
+                    <th>FP</th>
+                    <th>FF</th>
+                    <th>PC</th>
+                    <th>ABS</th>
+                </tr>              
+                <tr>
+                    <th><input type="time" name="tempo-fp" id="tempo-fp"></th>
+                    <th><input type="time" name="tempo-ff" id="tempo-ff"></th>
+                    <th><input type="time" name="tempo-pc" id="tempo-pc"></th>
+                    <th><input type="time" name="tempo-abs" id="tempo-abs"></th>
+                </tr>
+            </table> <br>
+            <table>
+                <tr>
+                    <th>AV</th>
+                    <th><input type="time" name="tempo-av" id="tempo-av"></th>
+                    <th><input type="text" name="motivo-av" id="motivo-av" placeholder="Motivo do evento"></th>
+                </tr>
+                <tr>
+                    <th>MNS</th>
+                    <th><input type="time" name="tempo-mns" id="tempo-mns"></th>
+                    <th><input type="text" name="motivo-mns" id="motivo-mns" placeholder="Motivo do evento"></th>
+                </tr>
+                <tr>
+                    <th>MP</th>
+                    <th><input type="time" name="tempo-mp" id="tempo-mp"></th>
+                    <th><input type="text" name="motivo-mp" id="motivo-mp" placeholder="Motivo do evento"></th>
+                </tr>
+            </table> <br> <hr>
+        </div> <br>
+
+        <div class="consideracoes">
+            <h2 for="consideracoes">OBSERVAÇÕES:</h2>
+            <textarea name="texto-consideracoes" id="texto-consideracoes" cols="60" rows="10" placeholder="Digite aqui caso precise pontuar sobre algum evento ocorrido e informações relevantes."></textarea>
+        </div> <br>
+
+        <div>
+            <label for="programacao">Programação D+1:</label>
+            <input type="text" id="programacao" name="programacao">
+        </div> <br> <br> <br>
+
+        <label for="submit" id="botao-submit"> <strong> Gerar Relatório </strong> </label>
+        <input id="submit" name="submit" type="submit" value="Gerar Relatório" 
+        onclick="gerarpdf(),gerarpdf2(),gerarpdf3(),gerarpdf4(),gerarpdf5(),gerarpdf6(),gerarpdf7(),gerarpdf8(),gerarpdf9(),gerarpdf10(),
+        gerarpdf11(),gerarpdf12(),gerarpdf13(),gerarpdf14(),gerarpdf15(),gerarpdf16(),gerarpdf17(),gerarpdf18(),gerarpdf19(),gerarpdf20(),
+        gerarpdf21(),gerarpdf22(),gerarpdf23(),gerarpdf24(),gerarpdf25(),gerarpdf26(),gerarpdf27(),gerarpdf28(),gerarpdf29(),gerarpdf30(),
+        gerarpdf31(),gerarpdf32(),gerarpdf33(),gerarpdf34(),gerarpdf35(),gerarpdf36(),gerarpdf37(),gerarpdf38(),gerarpdf39(),gerarpdf40(),
+        gerarpdf41(),gerarpdf42(),gerarpdf43(),gerarpdf44(),criarpdf(),print()">
+    </fieldset> <br>
+
+    <p> Ainda falta não acoplamento </p>
+    <p> tipo_data_supervisao_kmincial_kmfinal </p>
+    <p> ex: us_17012022_ribeiraopreto_EPV_EBA_EBU.pdf</p>
+    
+<!-------------------------------->   
+<!-- Relatório que será impresso-->
+    <div class="relatorio" id="relatorio" hidden>
+        <fieldset id="fsrelatorio"><legend><h1>RELATÓRIO DE INSPEÇÃO</h1></legend>
+                <table>
+                    <tr>
+                        <th>EQUIPAMENTO</th>
+                        <th>TÉCNICO</th>
+                        <th>OPERADOR</th>
+                        <th>ACOMPANHANTE(S)</th>
+                    </tr>
+                    <tr class="resposta">
+                        <th id="equipamento-resposta"></th>
+                        <th id="tecnico-resposta"></th>
+                        <th id="operador-resposta"></th>
+                        <th id="acompanhantes-resposta"></th>
+                    </tr>
+                </table> <br>
+                <table>
+                    <tr> 
+                        <th>CORREDOR</th>
+                        <th>SUPERVISÃO</th>
+                        <th>TRECHOS INSPECIONADOS</th>
+                    </tr>
+                    <tr class="resposta">
+                        <th id="corredor-resposta"></th>
+                        <th id="supervisao-resposta"></th>
+                        <th id="trechos-resposta"></th>
+                    </tr>
+                </table> <br>
+                <table>
+                    <tr> 
+                        <th>KM INICIAL</th>
+                        <th>KM FINAL</th>
+                        <th>TOTAL INSPECIONADO</th>
+                    </tr>
+                    <tr class="resposta">
+                        <th id="kminicial-resposta"></th>
+                        <th id="kmfinal-resposta"></th>
+                        <th id="total-resposta"></th>
+                    </tr>
+                </table> <br> <hr>
+
+        <h2>DEFEITOS</h2>
+            <p>Pontos de defeitos, restrições e interdições:</p>
+                <table class="defeitos">
+                    <tr>
+                        <th>INTERDIÇÕES</th>
+                        <th>RESTRIÇÕES</th>
+                        <th>ZONA QUENTE</th>
+                    </tr>
+                    <tr>
+                        <th id="interdicoes-resposta"></th>
+                        <th id="restricoes-resposta"></th>
+                        <th id="zonaquente-resposta"></th>
+                    </tr>
+                    <tr>
+                        <th>P0</th>
+                        <th>P1</th>
+                        <th>P2</th>
+                    </tr>
+                    <tr>
+                        <th id="p0-resposta"></th>
+                        <th id="p1-resposta"></th>
+                        <th id="p2-resposta"></th>
+                    </tr>
+                </table><br><hr><br>
+
+        <h2>EVIDÊNCIAS</h2>
+            <P>Evidências de pontos críticos encontrados:</P>
+                <table class="evidencias">
+                    <tr>
+                        <th> <img src="" alt="" id="preview-image011" class="preview"> </th>
+                        <th> <img src="" alt="" id="preview-image21" class="preview"> </th>
+                        <th> <img src="" alt="" id="preview-image31" class="preview"> </th>
+                    </tr>
+                    <tr class="resposta">
+                        <th id="obs-resposta1"></th>
+                        <th id="obs-resposta2"></th>
+                        <th id="obs-resposta3"></th>
+                    </tr>
+                    <tr>
+                        <th> <img src="" alt="" id="preview-image41" class="preview"> </th>
+                        <th> <img src="" alt="" id="preview-image51" class="preview"> </th>
+                        <th> <img src="" alt="" id="preview-image61" class="preview"> </th>
+                    </tr>
+                    <tr class="resposta">
+                        <th id="obs-resposta4"></th>
+                        <th id="obs-resposta5"></th>
+                        <th id="obs-resposta6"></th>
+                    </tr>
+                    <tr>
+                        <th> <img src="" alt="" id="preview-image71" class="preview"> </th>
+                        <th> <img src="" alt="" id="preview-image81" class="preview"> </th>
+                        <th> <img src="" alt="" id="preview-image91" class="preview"> </th>
+                    </tr>
+                    <tr class="resposta">
+                        <th id="obs-resposta7"></th>
+                        <th id="obs-resposta8"></th>
+                        <th id="obs-resposta9"></th>
+                    </tr>
+                    <tr>
+                        <th> <img src="" alt="" id="preview-image101" class="preview"> </th>
+                        <th> <img src="" alt="" id="preview-image111" class="preview"> </th>
+                        <th> <img src="" alt="" id="preview-image121" class="preview"> </th>
+                    </tr>
+                    <tr class="resposta">
+                        <th id="obs-resposta10"></th>
+                        <th id="obs-resposta11"></th>
+                        <th id="obs-resposta12"></th>
+                    </tr>
+                </table> <br><hr><br>
+
+        <h2>MACRO 20</h2>
+                <table>
+                    <tr>
+                        <th>HI</th>
+                        <th>HT</th>
+                        <th>HP</th>
+                        <th>HD</th>
+                    </tr>
+                    <tr>
+                        <th id="resposta-hi"></th>
+                        <th id="resposta-ht"></th>
+                        <th id="resposta-hp"></th>
+                        <th id="resposta-hd"></th>
+                    </tr>
+                    <tr>
+                        <th>FP</th>
+                        <th>FF</th>
+                        <th>PC</th>
+                        <th>ABS</th>
+                    </tr>       
+                     <tr>
+                        <th id="resposta-fp"></th>
+                        <th id="resposta-ff"></th>
+                        <th id="resposta-pc"></th>
+                        <th id="resposta-abs"></th>
+                     </tr>                  
+                </table>
+                <table>
+                    <tr>
+                        <th>AV</th>
+                        <th id="resposta-av"></th>
+                        <th id="resposta-motivo-av"></th>
+                    </tr>
+                    <tr>
+                        <th>MNS</th>
+                        <th id="resposta-mns"></th>
+                        <th id="resposta-motivo-mns"></th>
+                    </tr>
+                    <tr>
+                        <th>MP</th>
+                        <th id="resposta-mp"></th>
+                        <th id="resposta-motivo-mp"></th>
+                    </tr>
+                </table> <br> <hr> <br>
+
+            <h2>OBSERVAÇÕES</h2>
+            <div class="observ-resposta">
+                <p id="resposta-observacoes" name="resposta-observacoes"></p><br>
+                <p>Programação D+1: <p id="programacao-resposta"></p> </p>
+            </div> <br> <br> <br>
+
+            <p id="aviso-download"><strong><mark>Antes de realizar o download certifique-se de que as informações estão corretas!</mark> <br><br>
+            <label for="download" id="botao-download"> <strong> Download </strong> </label>
+            <input type="button" id="download" name="download" value="download" onclick="print()">
+        </fieldset>
+    </div>
+
+   
+    
+</body>
+
+    <script src="imprimir.js"></script>
+    <script src="anexar.js"></script>
+
+</html>
